@@ -1,0 +1,47 @@
+body {
+    font-family: sans-serif;
+    text-align: center;
+    background-color: #2b2b2b;
+    color: white;
+}
+
+.card-container {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    min-height: 120px;
+    padding: 10px;
+    background-color: #3c3f41;
+    border-radius: 8px;
+    margin: 10px auto;
+    width: 80%;
+}
+
+.card {
+    width: 90px;
+    height: 120px;
+    border: 2px solid #aaa;
+    border-radius: 6px;
+    background-color: #1e1e1e;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 5px;
+    font-size: 12px;
+}
+
+button {
+    padding: 8px 16px;
+    font-size: 16px;
+    cursor: pointer;
+}
+.card.can-attack {
+    border-color: #00ff66;
+    box-shadow: 0 0 8px #00ff66;
+    cursor: pointer;
+}
+
+.card:hover {
+    transform: translateY(-4px);
+    transition: transform 0.1s;
+}

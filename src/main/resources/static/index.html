@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>オンラインカードゲーム</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <!-- SockJS & STOMP（WebSocket用ライブラリ） -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sockjs-client/1.6.1/sockjs.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/stomp.js/2.3.3/stomp.min.js"></script>
+</head>
+<body>
+    <h1>カードゲーム オンライン対戦</h1>
+
+    <!-- 接続状態・プレイヤー情報 -->
+    <div id="status-panel">
+        <p>状態: <span id="connection-status">未接続</span></p>
+        <button id="connect-btn" onclick="connect()">対戦部屋に入る</button>
+    </div>
+
+    <!-- ゲーム盤面エリア -->
+    <div id="game-board" style="display: none;">
+        <!-- 相手エリア -->
+        <div class="area enemy-area">
+            <h2>相手 (HP: <span id="enemy-hp">20</span>)</h2>
+            <div id="enemy-board" class="card-container"></div>
+        </div>
+
+        <hr>
+
+        <!-- 自分エリア -->
+        <div class="area player-area">
+            <h2>あなた (HP: <span id="player-hp">20</span> | PP: <span id="player-pp">1</span>)</h2>
+            <div id="player-board" class="card-container"></div>
+            
+            <h3>あなたの手札</h3>
+            <div id="player-hand" class="card-container"></div>
+            
+            <button onclick="endTurn()">ターン終了</button>
+        </div>
+    </div>
+
+    <script src="/js/game.js"></script>
+</body>
+</html>
